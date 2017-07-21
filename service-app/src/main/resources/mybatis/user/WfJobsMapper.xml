@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.coolq.ap.mapper.user.WfJobsMapper">
+    <resultMap id="BaseResultMap" type="com.coolq.ap.entity.WfJobs">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="app_name" property="appName" jdbcType="VARCHAR"/>
+        <result column="app_path" property="appPath" jdbcType="VARCHAR"/>
+        <result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
+        <result column="end_time" property="endTime" jdbcType="TIMESTAMP"/>
+        <result column="external_id" property="externalId" jdbcType="VARCHAR"/>
+        <result column="group_name" property="groupName" jdbcType="VARCHAR"/>
+        <result column="last_modified_time" property="lastModifiedTime" jdbcType="TIMESTAMP"/>
+        <result column="log_token" property="logToken" jdbcType="VARCHAR"/>
+        <result column="parent_id" property="parentId" jdbcType="VARCHAR"/>
+        <result column="run" property="run" jdbcType="INTEGER"/>
+        <result column="start_time" property="startTime" jdbcType="TIMESTAMP"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="conf" property="conf" jdbcType="LONGVARBINARY"/>
+        <result column="proto_action_conf" property="protoActionConf" jdbcType="LONGVARBINARY"/>
+        <result column="sla_xml" property="slaXml" jdbcType="LONGVARBINARY"/>
+        <result column="wf_instance" property="wfInstance" jdbcType="LONGVARBINARY"/>
+
+    </resultMap>
+  <sql id="Base_Column_List">
+    id, app_name, app_path, created_time, end_time, external_id, group_name, last_modified_time, 
+    log_token, parent_id, run, start_time, status, user_name, conf, proto_action_conf, sla_xml, wf_instance
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from wf_jobs
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wf_jobs
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.coolq.ap.entity.WfJobs">
+        insert into wf_jobs ( app_name, app_path,
+        created_time, end_time, external_id,
+        group_name, last_modified_time, log_token,
+        parent_id, run, start_time,
+        status, user_name, conf,
+        proto_action_conf, sla_xml, wf_instance
+        )
+        values (#{id,jdbcType=VARCHAR}, #{appName,jdbcType=VARCHAR}, #{appPath,jdbcType=VARCHAR},
+        #{createdTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{externalId,jdbcType=VARCHAR},
+        #{groupName,jdbcType=VARCHAR}, #{lastModifiedTime,jdbcType=TIMESTAMP}, #{logToken,jdbcType=VARCHAR},
+        #{parentId,jdbcType=VARCHAR}, #{run,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP},
+        #{status,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{conf,jdbcType=LONGVARBINARY},
+        #{protoActionConf,jdbcType=LONGVARBINARY}, #{slaXml,jdbcType=LONGVARBINARY}, #{wfInstance,jdbcType=LONGVARBINARY}
+        );
+        <selectKey resultType="long" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+    <insert id="insertSelective" parameterType="com.coolq.ap.entity.WfJobs">
+        insert into wf_jobs
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="appName != null">
+                app_name,
+            </if>
+            <if test="appPath != null">
+                app_path,
+            </if>
+            <if test="createdTime != null">
+                created_time,
+            </if>
+            <if test="endTime != null">
+                end_time,
+            </if>
+            <if test="externalId != null">
+                external_id,
+            </if>
+            <if test="groupName != null">
+                group_name,
+            </if>
+            <if test="lastModifiedTime != null">
+                last_modified_time,
+            </if>
+            <if test="logToken != null">
+                log_token,
+            </if>
+            <if test="parentId != null">
+                parent_id,
+            </if>
+            <if test="run != null">
+                run,
+            </if>
+            <if test="startTime != null">
+                start_time,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="conf != null">
+                conf,
+            </if>
+            <if test="protoActionConf != null">
+                proto_action_conf,
+            </if>
+            <if test="slaXml != null">
+                sla_xml,
+            </if>
+            <if test="wfInstance != null">
+                wf_instance,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="appName != null">
+                #{appName,jdbcType=VARCHAR},
+            </if>
+            <if test="appPath != null">
+                #{appPath,jdbcType=VARCHAR},
+            </if>
+            <if test="createdTime != null">
+                #{createdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endTime != null">
+                #{endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="externalId != null">
+                #{externalId,jdbcType=VARCHAR},
+            </if>
+            <if test="groupName != null">
+                #{groupName,jdbcType=VARCHAR},
+            </if>
+            <if test="lastModifiedTime != null">
+                #{lastModifiedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="logToken != null">
+                #{logToken,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId != null">
+                #{parentId,jdbcType=VARCHAR},
+            </if>
+            <if test="run != null">
+                #{run,jdbcType=INTEGER},
+            </if>
+            <if test="startTime != null">
+                #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="conf != null">
+                #{conf,jdbcType=LONGVARBINARY},
+            </if>
+            <if test="protoActionConf != null">
+                #{protoActionConf,jdbcType=LONGVARBINARY},
+            </if>
+            <if test="slaXml != null">
+                #{slaXml,jdbcType=LONGVARBINARY},
+            </if>
+            <if test="wfInstance != null">
+                #{wfInstance,jdbcType=LONGVARBINARY},
+            </if>
+        </trim>
+
+        <selectKey resultType="long" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.coolq.ap.entity.WfJobs">
+        update wf_jobs
+        <set>
+            <if test="appName != null">
+                app_name = #{appName,jdbcType=VARCHAR},
+            </if>
+            <if test="appPath != null">
+                app_path = #{appPath,jdbcType=VARCHAR},
+            </if>
+            <if test="createdTime != null">
+                created_time = #{createdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="externalId != null">
+                external_id = #{externalId,jdbcType=VARCHAR},
+            </if>
+            <if test="groupName != null">
+                group_name = #{groupName,jdbcType=VARCHAR},
+            </if>
+            <if test="lastModifiedTime != null">
+                last_modified_time = #{lastModifiedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="logToken != null">
+                log_token = #{logToken,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId != null">
+                parent_id = #{parentId,jdbcType=VARCHAR},
+            </if>
+            <if test="run != null">
+                run = #{run,jdbcType=INTEGER},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="conf != null">
+                conf = #{conf,jdbcType=LONGVARBINARY},
+            </if>
+            <if test="protoActionConf != null">
+                proto_action_conf = #{protoActionConf,jdbcType=LONGVARBINARY},
+            </if>
+            <if test="slaXml != null">
+                sla_xml = #{slaXml,jdbcType=LONGVARBINARY},
+            </if>
+            <if test="wfInstance != null">
+                wf_instance = #{wfInstance,jdbcType=LONGVARBINARY},
+            </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.coolq.ap.entity.WfJobs">
+    update wf_jobs
+    set app_name = #{appName,jdbcType=VARCHAR},
+      app_path = #{appPath,jdbcType=VARCHAR},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      external_id = #{externalId,jdbcType=VARCHAR},
+      group_name = #{groupName,jdbcType=VARCHAR},
+      last_modified_time = #{lastModifiedTime,jdbcType=TIMESTAMP},
+      log_token = #{logToken,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=VARCHAR},
+      run = #{run,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      conf = #{conf,jdbcType=LONGVARBINARY},
+      proto_action_conf = #{protoActionConf,jdbcType=LONGVARBINARY},
+      sla_xml = #{slaXml,jdbcType=LONGVARBINARY},
+      wf_instance = #{wfInstance,jdbcType=LONGVARBINARY}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+
+
+</mapper>
