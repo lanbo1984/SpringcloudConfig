@@ -253,6 +253,12 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
 
-
+    <select id="selectWfJobsList" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from wf_jobs
+        where 1=1
+        ORDER BY created_time  DESC
+    </select>
 
 </mapper>

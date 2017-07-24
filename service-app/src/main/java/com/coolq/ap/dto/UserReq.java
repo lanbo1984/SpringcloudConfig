@@ -1,11 +1,13 @@
 package com.coolq.ap.dto;
 
+import com.coolq.ap.common.page.PageReq;
+
 /**
  * @author lanbo
  * @Description:
  * @date 17/7/21
  */
-public class UserReq {
+public class UserReq extends PageReq {
     private String userName;
     private int userId;
 
