@@ -9,6 +9,11 @@ import com.github.pagehelper.PageInfo;
  */
 public class PageConverts {
 
+    /**
+     * pagehelper.PageInfo 转换
+     * @param pageInfo
+     * @return
+     */
     public static PageRsp convert(PageInfo pageInfo) {
 
         if (pageInfo == null || pageInfo.getTotal() == 0) {
