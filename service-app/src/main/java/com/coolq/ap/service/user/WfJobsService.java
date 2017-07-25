@@ -3,7 +3,7 @@ package com.coolq.ap.service.user;
 
 import com.coolq.ap.common.page.PageRsp;
 import com.coolq.ap.dto.UserReq;
-import com.coolq.ap.entity.WfJobs;
+import com.coolq.ap.entity.user.WfJobs;
 
 public interface WfJobsService {
 

@@ -1,6 +1,6 @@
 package com.coolq.ap.service.user;
 
-import com.coolq.ap.entity.EtlUser;
+import com.coolq.ap.entity.user.EtlUser;
 import com.coolq.ap.service.BaseService;
 
 /**

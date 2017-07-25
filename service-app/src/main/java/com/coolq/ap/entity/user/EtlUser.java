@@ -1,4 +1,4 @@
-package com.coolq.ap.entity;
+package com.coolq.ap.entity.user;
 
 import java.util.Date;
 

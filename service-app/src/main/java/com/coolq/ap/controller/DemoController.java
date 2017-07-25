@@ -4,15 +4,14 @@ import com.alibaba.fastjson.JSON;
 import com.coolq.ap.common.AjaxResult;
 import com.coolq.ap.common.page.PageRsp;
 import com.coolq.ap.dto.UserReq;
-import com.coolq.ap.entity.EtlUser;
-import com.coolq.ap.entity.WfJobs;
+import com.coolq.ap.entity.user.EtlUser;
+import com.coolq.ap.entity.user.WfJobs;
 import com.coolq.ap.enums.ResultMsgEnum;
 import com.coolq.ap.service.user.UserService;
 import com.coolq.ap.service.user.WfJobsService;
 import com.coolq.ap.utils.RedisUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 

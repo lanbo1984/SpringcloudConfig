@@ -2,10 +2,10 @@ package com.coolq.ap.service.impl.user;
 
 import com.coolq.ap.common.page.PageConverts;
 import com.coolq.ap.common.page.PageRsp;
-import com.coolq.ap.datasource.annotation.DbMsEnum;
-import com.coolq.ap.datasource.annotation.SwitchDs;
+import com.coolq.ap.common.datasource.annotation.DbMsEnum;
+import com.coolq.ap.common.datasource.annotation.SwitchDs;
 import com.coolq.ap.dto.UserReq;
-import com.coolq.ap.entity.WfJobs;
+import com.coolq.ap.entity.user.WfJobs;
 import com.coolq.ap.mapper.user.WfJobsMapper;
 import com.coolq.ap.service.user.WfJobsService;
 import com.github.pagehelper.PageHelper;

@@ -1,4 +1,4 @@
-package com.coolq.ap.datasource.annotation;
+package com.coolq.ap.common.datasource.annotation;
 
 import java.lang.annotation.*;
 

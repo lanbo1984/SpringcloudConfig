@@ -1,8 +1,6 @@
 package com.coolq.ap.service.impl.user;
 
-import com.coolq.ap.datasource.annotation.DbMsEnum;
-import com.coolq.ap.datasource.annotation.SwitchDs;
-import com.coolq.ap.entity.EtlUser;
+import com.coolq.ap.entity.user.EtlUser;
 import com.coolq.ap.mapper.BaseMapper;
 import com.coolq.ap.mapper.user.EtlUserMapper;
 import com.coolq.ap.service.impl.BaseServiceImpl;

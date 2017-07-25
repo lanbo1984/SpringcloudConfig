@@ -1,7 +1,7 @@
-package com.coolq.ap.datasource;
+package com.coolq.ap.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.coolq.ap.datasource.annotation.DynamicDataSource;
+import com.coolq.ap.common.datasource.annotation.DynamicDataSource;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

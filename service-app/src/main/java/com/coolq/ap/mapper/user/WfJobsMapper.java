@@ -1,7 +1,7 @@
 package com.coolq.ap.mapper.user;
 
 
-import com.coolq.ap.entity.WfJobs;
+import com.coolq.ap.entity.user.WfJobs;
 
 import java.util.List;
 import java.util.Map;

@@ -1,7 +1,7 @@
-package com.coolq.ap.datasource;
+package com.coolq.ap.common.datasource;
 
-import com.coolq.ap.datasource.annotation.DbMsEnum;
-import com.coolq.ap.datasource.annotation.SwitchDs;
+import com.coolq.ap.common.datasource.annotation.DbMsEnum;
+import com.coolq.ap.common.datasource.annotation.SwitchDs;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;

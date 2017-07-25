@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.coolq.ap.mapper.user.WfJobsMapper">
-    <resultMap id="BaseResultMap" type="com.coolq.ap.entity.WfJobs">
+    <resultMap id="BaseResultMap" type="com.coolq.ap.entity.user.WfJobs">
         <id column="id" property="id" jdbcType="VARCHAR"/>
         <result column="app_name" property="appName" jdbcType="VARCHAR"/>
         <result column="app_path" property="appPath" jdbcType="VARCHAR"/>
@@ -36,7 +36,7 @@
     delete from wf_jobs
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-    <insert id="insert" parameterType="com.coolq.ap.entity.WfJobs">
+    <insert id="insert" parameterType="com.coolq.ap.entity.user.WfJobs">
         insert into wf_jobs ( app_name, app_path,
         created_time, end_time, external_id,
         group_name, last_modified_time, log_token,
@@ -55,7 +55,7 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
     </insert>
-    <insert id="insertSelective" parameterType="com.coolq.ap.entity.WfJobs">
+    <insert id="insertSelective" parameterType="com.coolq.ap.entity.user.WfJobs">
         insert into wf_jobs
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -174,7 +174,7 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.coolq.ap.entity.WfJobs">
+    <update id="updateByPrimaryKeySelective" parameterType="com.coolq.ap.entity.user.WfJobs">
         update wf_jobs
         <set>
             <if test="appName != null">
@@ -231,7 +231,7 @@
         </set>
         where id = #{id,jdbcType=VARCHAR}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.coolq.ap.entity.WfJobs">
+    <update id="updateByPrimaryKey" parameterType="com.coolq.ap.entity.user.WfJobs">
     update wf_jobs
     set app_name = #{appName,jdbcType=VARCHAR},
       app_path = #{appPath,jdbcType=VARCHAR},

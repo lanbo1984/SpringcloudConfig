@@ -2,7 +2,7 @@ package com.coolq.ap.common;
 
 import com.coolq.ap.enums.ResultMsgEnum;
 
-public class ResultMsgException extends Exception {
+public class ResultMsg extends Exception {
 
     /**
      *
@@ -14,12 +14,12 @@ public class ResultMsgException extends Exception {
     /**
      * @param msg
      */
-    public ResultMsgException(String msg) {
+    public ResultMsg(String msg) {
         super(msg);
         this.msgEnum = null;
     }
 
-    public ResultMsgException(ResultMsgEnum msgEnum) {
+    public ResultMsg(ResultMsgEnum msgEnum) {
         super(msgEnum.message);
         this.msgEnum = msgEnum;
     }

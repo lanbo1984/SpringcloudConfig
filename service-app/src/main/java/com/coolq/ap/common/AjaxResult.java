@@ -72,7 +72,7 @@ public class AjaxResult {
         return new AjaxResult(err.code, null, err.message);
     }
 
-    public static final AjaxResult failed(ResultMsgException err) {
+    public static final AjaxResult failed(ResultMsg err) {
         if (err.msgEnum != null) {
             return new AjaxResult(err.msgEnum.code, null, err.msgEnum.message);
         }

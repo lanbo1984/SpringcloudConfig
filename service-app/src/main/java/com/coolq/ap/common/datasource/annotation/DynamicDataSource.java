@@ -1,6 +1,6 @@
-package com.coolq.ap.datasource.annotation;
+package com.coolq.ap.common.datasource.annotation;
 
-import com.coolq.ap.datasource.DynamicDataSourceHolder;
+import com.coolq.ap.common.datasource.DynamicDataSourceHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
