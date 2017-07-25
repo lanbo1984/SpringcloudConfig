@@ -12,6 +12,8 @@ import com.coolq.ap.service.user.WfJobsService;
 import com.coolq.ap.utils.RedisUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +26,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/user")
+@RefreshScope
 public class DemoController {
 
     private Logger logger = LoggerFactory.getLogger(DemoController.class);
@@ -37,6 +40,9 @@ public class DemoController {
 
 
     final String userRedisKey = "dmeo:app:user";
+
+    @Value("${bus.test}")
+    private String testValue;
 
     @RequestMapping("/getUserInfo")
     @ResponseBody
@@ -61,6 +67,12 @@ public class DemoController {
             return AjaxResult.failed(ResultMsgEnum.SYSTEM_ERROR);
         }
 
+    }
+
+    @RequestMapping("/test")
+    @ResponseBody
+    public AjaxResult test() {
+        return AjaxResult.success(testValue);
     }
 
 }
