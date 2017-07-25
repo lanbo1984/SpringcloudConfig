@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @Description:
  * @date 17/7/17
  */
-@FeignClient(value = "APP", configuration = FeignConfig.class, fallback = ServiceHiHystric.class)
+@FeignClient(value = "APP", configuration = FeignConfig.class, fallback = UserServiceHystric.class)
 public interface UserService {
 
     @RequestMapping(value = "/user/getUserInfo", method = RequestMethod.POST,consumes = "application/json")

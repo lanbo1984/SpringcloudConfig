@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @date 17/7/17
  */
 @Component
-public class ServiceHiHystric implements UserService {
+public class UserServiceHystric implements UserService {
 
     @Override
     public String getUserInfo(UserReq userReq) {
