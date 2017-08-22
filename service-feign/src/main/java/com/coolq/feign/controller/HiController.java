@@ -24,7 +24,7 @@ public class HiController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/hi", method = RequestMethod.GET)
+    @RequestMapping(value = "/hi")
     public String sayHi(@RequestParam String name) {
         UserReq userReq = new UserReq();
         userReq.setUserName(name);
