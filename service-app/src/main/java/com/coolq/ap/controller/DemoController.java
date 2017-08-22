@@ -48,11 +48,11 @@ public class DemoController {
     @ResponseBody
     public AjaxResult getUserInfo(@RequestBody UserReq userReq) {
         try {
-            PageRsp<WfJobs> pageRsp = wfJobsService.queryWfJobList(userReq);
-
-            if (pageRsp != null) {
-                return AjaxResult.success(pageRsp);
-            }
+//            PageRsp<WfJobs> pageRsp = wfJobsService.queryWfJobList(userReq);
+//
+//            if (pageRsp != null) {
+//                return AjaxResult.success(pageRsp);
+//            }
             // 缓存中取
             String cacheUser = RedisUtil.hget(0, userRedisKey, userReq.getUserName());
             if (StringUtils.hasText(cacheUser)) {

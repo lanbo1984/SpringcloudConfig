@@ -1,5 +1,6 @@
 package com.coolq.ribbon.service;
 
+import com.coolq.ribbon.dto.UserReq;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -16,8 +17,10 @@ public class HiService {
     @Autowired
     RestTemplate restTemplate;
 
-    public String hiService(String name) {
-        return restTemplate.getForObject("http://app/user/getUserInfo?userName=" + name, String.class);
+    public String hiService(UserReq userReq) {
+
+        return restTemplate.postForObject("http://app/user/getUserInfo", userReq, String.class);
+
     }
 
 

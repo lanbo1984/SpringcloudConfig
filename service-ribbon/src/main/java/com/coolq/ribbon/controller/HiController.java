@@ -1,5 +1,6 @@
 package com.coolq.ribbon.controller;
 
+import com.coolq.ribbon.dto.UserReq;
 import com.coolq.ribbon.service.HiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,9 +23,9 @@ public class HiController {
     private HiService hiService;
 
     @RequestMapping(value = "/hi")
-    public String hi(@RequestParam String name) {
-        logger.info("client:{},name:{}", "ribbon", name);
-        return hiService.hiService(name);
+    public String hi(UserReq userReq) {
+        logger.info("client:{},name:{}", "ribbon", userReq);
+        return hiService.hiService(userReq);
     }
 
 }
